@@ -1,0 +1,21 @@
+html,
+body {
+    background: black; 
+    margin: 0;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);  
+}
