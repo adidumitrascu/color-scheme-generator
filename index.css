@@ -1,21 +1,74 @@
 html,
 body {
-    background: black; 
-    margin: 0;
+  background: black;
+  margin: 0;
 }
 
 .flex-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 .item {
-    display: flex;
+  background: white;
+  width: calc(100% - 30px);
+  height: calc(100% - 30px);
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+#color-scheme,
+#scheme-btn {
+  padding: 2em;
+  text-align: center;
+  margin: 0 5px;
+}
+
+#color {
+  width: auto;
+  height: 80px;
+  margin: 5px 5px 0 5px;
+}
+
+@media (min-width: 450px) {
+  nav {
+    /* display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    flex-direction: row; */
+    display: grid;
+    grid-template-columns: 50px 300px 200px;
+    grid-template-areas: "colors scheme btn";
+
+    margin-top: 5px;
+  }
+  .item {
     background: white;
-    width: calc(100% - 30px);
-    height: calc(100% - 30px);  
+    width: calc(100% - 300px);
+    height: calc(100% - 100px);
+  }
+  #color,
+  #color-scheme,
+  #scheme-btn {
+    padding: 0;
+    height: 50px;
+    align-items: center;
+  }
+
+  #color {
+    grid-area: colors;
+  }
+  #color-scheme {
+    grid-area: scheme;
+  }
+  #scheme-btn {
+    grid-area: btn;
+  }
 }
