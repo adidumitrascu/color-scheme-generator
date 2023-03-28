@@ -8,13 +8,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  /* height: 100vh; */
+  margin: 10px;
 }
 
 .item {
   background: white;
-  width: calc(100% - 30px);
-  height: calc(100% - 30px);
+  /* height: calc(100% - 30px); */
+  /* width: calc(100% - 30px); */
+  width: 100%;
 }
 
 nav {
@@ -31,38 +33,48 @@ nav {
   margin: 0 5px;
 }
 
-#color {
-  width: auto;
+#color-picker {
   height: 80px;
+  width: auto;
   margin: 5px 5px 0 5px;
 }
 
-@media (min-width: 450px) {
-  nav {
-    /* display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: row; */
-    display: grid;
-    grid-template-columns: 50px 300px 200px;
-    grid-template-areas: "colors scheme btn";
+#colors {
+  display: grid;
+  grid-column: 1/-1;
+  grid-template-rows: repeat(5, 1fr);
+  height: 100vh;
+  margin: 5px;
+}
 
-    margin-top: 5px;
+.color-el {
+  color: white;
+}
+
+@media (min-width: 820px) {
+  nav {
+    display: grid;
+    grid-template-columns: 200px 300px 200px;
+    grid-template-areas: "colors scheme btn";
   }
   .item {
-    background: white;
-    width: calc(100% - 300px);
     height: calc(100% - 100px);
+    width: calc(100% - 600px);
   }
-  #color,
+  #colors {
+    grid-template-columns: repeat(5, 1fr);
+    margin-top: 0;
+  }
+  #color-picker,
   #color-scheme,
   #scheme-btn {
-    padding: 0;
     height: 50px;
     align-items: center;
+    margin: 5px;
+    padding: 0;
   }
 
-  #color {
+  #color-picker {
     grid-area: colors;
   }
   #color-scheme {
@@ -70,5 +82,15 @@ nav {
   }
   #scheme-btn {
     grid-area: btn;
+  }
+  .color-el {
+    height: inherit;
+  }
+}
+
+@media (max-width: 1350px) and (min-width: 821px) {
+  .item {
+    height: calc(100% - 100px);
+    width: calc(100% - 100px);
   }
 }
