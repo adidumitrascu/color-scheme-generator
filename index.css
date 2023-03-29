@@ -23,6 +23,15 @@ nav {
   gap: 5px;
 }
 
+.color-el,
+#color-picker,
+#color-scheme,
+#scheme-btn {
+  cursor: pointer;
+  
+  
+}
+
 #color-scheme,
 #scheme-btn {
   padding: 2em;
@@ -46,6 +55,7 @@ nav {
 
 .color-el {
   color: white;
+  padding-left: 3px;
 }
 
 @media (min-width: 820px) {

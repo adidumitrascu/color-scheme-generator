@@ -14,8 +14,17 @@ document.getElementById("scheme-btn").addEventListener("click", () => {
       data.colors.map((color) => {
         const hex = color.hex.value
         colors.innerHTML += `
-                <div class="color-el" style="background:${hex}">${hex}</div>
-                `
+        <div class="color-el" style="background:${hex}">${hex}</div>
+        `
       })
     })
+  
+  setTimeout(() => {
+    document.querySelectorAll(".color-el").forEach((el) =>
+      el.addEventListener("click", (event) => {
+        navigator.clipboard.writeText(event.target.innerHTML)
+        alert("Hex value has been copied to clipboard: " + event.target.innerHTML)
+      })
+    )
+  }, 500)
 })
