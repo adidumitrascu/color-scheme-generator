@@ -18,12 +18,14 @@ document.getElementById("scheme-btn").addEventListener("click", () => {
         `
       })
     })
-  
+
   setTimeout(() => {
     document.querySelectorAll(".color-el").forEach((el) =>
       el.addEventListener("click", (event) => {
         navigator.clipboard.writeText(event.target.innerHTML)
-        alert("Hex value has been copied to clipboard: " + event.target.innerHTML)
+        alert(
+          "Hex value has been copied to clipboard: " + event.target.innerHTML
+        )
       })
     )
   }, 500)
